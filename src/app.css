@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.outer-container {
+	@apply sm:px-8;
+}
+.inner-container {
+	@apply relative px-4 sm:px-8 lg:px-12;
+}
+
+.primary {
+	@apply bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70;
+}
+.secondary {
+	@apply bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70;
+}
+.tab-active {
+	@apply text-teal-700 dark:text-teal-400;
+}
+.tag {
+	@apply flex p-1 rounded-sm m-1 text-lg items-center;
+}
+.tag::before {
+	content: '\0023';
+	margin-right: 2px;
+}
+.tag .remove-tag::after {
+	content: '\00d7';
+}
+.tag i {
+	@apply ml-2 text-base cursor-pointer transition-all duration-300;
+}
+.tag i:hover {
+	@apply text-red-500 transform scale-150;
+}
+
+.tag-container {
+	@apply text-gray-500 flex flex-wrap max-w-[95%] items-center;
+}
+
+.tag-container input {
+	@apply flex-1 h-8 px-0 text-xl outline-none text-gray-800 bg-inherit border-none focus:ring-0 dark:text-white dark:placeholder-gray-400;
+}
+
+.suggestions {
+	@apply max-w-[95%] mx-auto max-h-[150px] overflow-y-scroll dark:bg-black bg-white rounded-md shadow-md;
+}
+
+.suggestions h5 {
+	@apply border-b text-gray-500;
+}
+.suggestion-item {
+	@apply pb-[0.3rem] border-l border-transparent cursor-pointer transition-all duration-300 text-zinc-500 dark:text-zinc-100 hover:text-teal-500 dark:hover:text-teal-500 hover:border-l;
+}
+
+.suggestions .tag {
+	@apply bg-transparent mb-[-0.4rem];
+}
+.suggestions small {
+	@apply inline-block text-sm ml-[1.3em] italic;
+}
